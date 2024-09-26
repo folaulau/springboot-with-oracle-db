@@ -1,5 +1,6 @@
 package com.folautech.oracle;
 
+import com.folautech.oracle.dao.UserDAO;
 import com.folautech.oracle.entity.User;
 import com.folautech.oracle.repository.UserRepository;
 import com.github.javafaker.Faker;
@@ -17,6 +18,9 @@ class SpringbootWithOracleDbApplicationTests {
 
 	private Faker faker = new Faker();
 
+	@Autowired
+	private UserDAO userDAO;
+
 	@Test
 	void loadUsers() {
 
@@ -24,6 +28,7 @@ class SpringbootWithOracleDbApplicationTests {
 
 		for (int i = 0; i < 10; i++) {
 			User user = User.builder()
+					.id(userDAO.getNexPersonalKey())
 					.name(faker.name().fullName())
 					.email(faker.internet().emailAddress())
 					.active(random.nextBoolean())

@@ -46,6 +46,9 @@ public class User implements Serializable {
     @Column(name = "salary")
     private Double salary;
 
+    @Column(name = "personal_key", nullable = false)
+    private Long personalKey;
+
     @Column(name = "height_in_ft")
     private Float heightInFt;
 
