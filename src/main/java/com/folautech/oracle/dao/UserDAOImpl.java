@@ -20,7 +20,7 @@ public class UserDAOImpl implements UserDAO {
         /**
          * personal_key_seq.nextval is case insensitive
          */
-        query.append("SELECT PERSONAL_KEY_SEQ.NEXTVAL ");
+        query.append("SELECT USER_GEN_SEQ.NEXTVAL ");
         query.append("FROM dual ");
 
         Long nextVal = null;
@@ -30,6 +30,8 @@ public class UserDAOImpl implements UserDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        log.info("nextVal={}", nextVal);
 
         return nextVal;
     }
