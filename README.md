@@ -10,3 +10,6 @@
 4. Access the application at http://localhost:8080
 
 ### Steps to run the application using Docker
+Use oracle free database
+
+https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#db_free
